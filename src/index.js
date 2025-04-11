@@ -4,13 +4,14 @@ import { DB_NAME } from "./constants";
 import express from "express";*/
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+import { app } from "./app.js";
 
 dotenv.config({ path: `./src/.env` });
 
 connectDB()
   .then(() => {
     app.listen(process.env.PORT, () => {
-      console.log(` ⚙️ app is listening on port${process.env.PORT}`);
+      console.log(` ⚙️  app is listening on port ${process.env.PORT}`);
     });
   })
   .catch((err) => {
